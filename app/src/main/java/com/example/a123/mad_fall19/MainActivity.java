@@ -73,11 +73,4 @@ public class MainActivity extends AppCompatActivity {
             isValid = false;
         return isValid;
     }
-
-    public void sendMessage(View view)
-    {
-        Intent intent = new Intent(this, beauty.class);
-        intent.putExtra("name","abc");
-        startActivity(intent);
-    }
 }
