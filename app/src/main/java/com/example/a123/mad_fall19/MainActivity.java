@@ -1,9 +1,5 @@
 package com.example.a123.mad_fall19;
 
-<<<<<<< Updated upstream
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-=======
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +8,6 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
->>>>>>> Stashed changes
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
         country = findViewById(R.id.etCountry);
         cb = findViewById(R.id.checkBox);
     }
-<<<<<<< Updated upstream
-=======
 
     public void sendMessage(View view)
     {
@@ -80,5 +73,11 @@ public class MainActivity extends AppCompatActivity {
             isValid = false;
         return isValid;
     }
->>>>>>> Stashed changes
+
+    public void sendMessage(View view)
+    {
+        Intent intent = new Intent(this, beauty.class);
+        intent.putExtra("name","abc");
+        startActivity(intent);
+    }
 }
