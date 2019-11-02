@@ -90,12 +90,12 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/etFirstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="First Name"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textView6"
@@ -106,12 +106,12 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/etLastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="Last Name"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textView7"
@@ -122,12 +122,12 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editText7"
+            android:id="@+id/etGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="Gender"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textView8"
@@ -138,12 +138,12 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editText8"
+            android:id="@+id/etCountry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="Country"
+            android:inputType="textPersonName" />
 
         <CheckBox
             android:id="@+id/checkBox"
