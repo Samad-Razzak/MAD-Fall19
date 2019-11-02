@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="368dp"
-        android:layout_height="495dp"
+        android:layout_height="509dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="0dp">
@@ -16,7 +16,7 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="43dp"
             android:text="PERSONAL INFO"
             android:textAlignment="center"
             android:textSize="24sp"
@@ -25,7 +25,7 @@
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
-            android:layout_height="43dp"
+            android:layout_height="wrap_content"
             android:text="How would you like to be addressed?"
             android:textAlignment="center"
             android:textSize="18sp"
@@ -41,7 +41,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <EditText
@@ -150,6 +150,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="I consent, to the processing of my personal data in accordance with the Vista Jet Private Policy, and to the VistaJet Direct Mobile Program Terms and Conditions of use" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sendMessage"
+            android:text="Submit" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
