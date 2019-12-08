@@ -20,7 +20,7 @@ public class Login extends AppCompatActivity {
         password = findViewById(R.id.etPassword);
     }
 
-    protected void signIn(View v)
+    public void signIn(View v)
     {
         String name = email.getText().toString();
         String pass = password.getText().toString();
@@ -44,13 +44,13 @@ public class Login extends AppCompatActivity {
         }
     }
 
-    protected  void signUp(View v)
+    public  void signUp(View v)
     {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
-    private boolean emailValidation(String str){
+    public boolean emailValidation(String str){
         boolean isValid = false;
 
         if(str.contains("@"))
