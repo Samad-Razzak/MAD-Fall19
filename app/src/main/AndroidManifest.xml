@@ -8,8 +8,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Login">
+        android:theme="@style/AppTheme.NoActionBar">
+       <!-- android:theme="@style/AppTheme">-->
+        <!--<activity
+            android:name=".Drawer"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/AppTheme.NoActionBar">
+            &lt;!&ndash;<meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.a123.mad_fall19.Login" />&ndash;&gt;
+        </activity>-->
+        <activity android:name=".Drawer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,6 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".beauty" />
-        <activity android:name=".MainActivity"></activity>
-  </application>
+        <activity android:name=".MainActivity" />
+    </application>
+
 </manifest>
