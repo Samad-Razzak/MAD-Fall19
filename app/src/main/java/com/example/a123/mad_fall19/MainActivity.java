@@ -11,46 +11,50 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText firstname;
-    EditText lastname;
-    EditText gender;
-    EditText country;
+    EditText username;
+    EditText password;
+    EditText confirm;
+    EditText email;
     CheckBox cb;
+    DatabaseHelper databaseHelper;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        firstname = findViewById(R.id.etFirstName);
-        lastname = findViewById(R.id.etLastName);
-        gender = findViewById(R.id.etGender);
-        country = findViewById(R.id.etCountry);
+        username = findViewById(R.id.etName);
+        password = findViewById(R.id.etPassword);
+        confirm = findViewById(R.id.etConfirm);
+        email = findViewById(R.id.etEmail);
         cb = findViewById(R.id.checkBox);
+        databaseHelper = new DatabaseHelper(this);
+        user = new User();
     }
 
     public void sendMessage(View view)
     {
-        String fname = firstname.getText().toString();
-        String lname = lastname.getText().toString();
-        String gen = gender.getText().toString();
-        String cntry = country.getText().toString();
+        String name = username.getText().toString();
+        String pass = password.getText().toString();
+        String conf = confirm.getText().toString();
+        String mail = email.getText().toString();
         boolean isError= false;
 
-        if(fname != null && fname.equalsIgnoreCase("")){
-            firstname.setError("Please enter Valid first name");
+        if(name != null && name.equalsIgnoreCase("")){
+            username.setError("Please enter Valid user name");
             isError = true;
         }
-        if(lname != null && lname.equalsIgnoreCase("")){
-            lastname.setError("Please enter Valid last name");
+        if(pass != null && pass.equalsIgnoreCase("")){
+            password.setError("Please enter Valid password");
             isError = true;
         }
-        if(gen != null && gen.equalsIgnoreCase("")){
-            gender.setError("Please enter Valid gender");
+        if((conf != null && conf.equalsIgnoreCase("")) || pass != conf){
+            confirm.setError("Password is not matching");
             isError = true;
         }
-        if(cntry != null && cntry.equalsIgnoreCase("")){
-            country.setError("Please enter Valid country");
+        if(mail != null && mail.equalsIgnoreCase("") && !emailValidation(mail)){
+            email.setError("Please enter Valid email");
             isError = true;
         }
         if(!cb.isChecked()){
@@ -59,12 +63,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(!isError){
-            Intent intent = new Intent(this, beauty.class);
+            user.setName(name);
+            user.setPassword(pass);
+            user.setEmail(mail);
+            databaseHelper.addUser(user);
+            Intent intent = new Intent(this, Drawer.class);
             startActivity(intent);
         }
     }
 
-    private boolean userNameValidation(String str){
+    private boolean emailValidation(String str){
         boolean isValid = false;
 
         if(str.contains("@"))

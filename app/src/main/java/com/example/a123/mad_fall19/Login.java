@@ -5,11 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.content.Intent;
+import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
 
     EditText email;
     EditText password;
+    DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +20,7 @@ public class Login extends AppCompatActivity {
 
         email = findViewById(R.id.etEmail);
         password = findViewById(R.id.etPassword);
+        databaseHelper = new DatabaseHelper(this);
     }
 
     public void signIn(View v)
@@ -38,9 +41,12 @@ public class Login extends AppCompatActivity {
         }
 
         if(!isError){
-            Intent intent = new Intent(this, beauty.class);
-            intent.putExtra("NAME", name);
-            startActivity(intent);
+            if(databaseHelper.checkUser(name,pass)){
+                Intent intent = new Intent(this, Drawer.class);
+                startActivity(intent);
+            }else{
+                Toast.makeText(this, "Invalid username password", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
