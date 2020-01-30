@@ -35,6 +35,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".beauty" />
+        <activity android:name=".Login" />
         <activity android:name=".MainActivity" />
     </application>
 
